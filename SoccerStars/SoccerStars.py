@@ -149,7 +149,7 @@ class Igra(Widget):
             self.lopta.ball_collide(self.igrac1)
             self.lopta.ball_collide(self.igrac2)
 
-        #Odbijanje od zidova terena, treba jos malo doraditi, nekada dolazi do nekih grešaka
+        #Odbijanje od zidova terena
         if (self.igrac1.x <= 0) or (self.igrac1.right >= 600):
             self.igrac1.velocity_x *= -1
             self.igrac1.move()
