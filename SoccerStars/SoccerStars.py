@@ -101,7 +101,8 @@ class Igra(Widget):
     slijed = BooleanProperty(None) #provjerava ako si kliknuo igraca koji je na redu
     red = NumericProperty(1) #broji red odigranih koraka kako bi se znalo tko je na redu
 
-    zvuk = SoundLoader.load("source/sound1.mp3").play()
+    publika = SoundLoader.load("source/sound1.mp3").play()
+    goal = SoundLoader.load("source/sound2.mp3")
 
     #kad se klikne provjerava koji je igrac kliknut
     def on_touch_down(self, touch):
@@ -124,6 +125,7 @@ class Igra(Widget):
             self.red += 1
 
     def restart(self):
+        self.goal.play()
         self.lopta.center = (300, 454)
         self.lopta.velocity = (0,0)
         self.igrac1.center = (300, 200)
